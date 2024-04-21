@@ -1,0 +1,12 @@
+services:
+  # Apache and PHP service
+  web:
+    image: php:8-apache
+    container_name: php-apache-container-act01
+    ports:
+      - "8081:80"
+    volumes:
+      - ./html:/var/www/html
+# Define networks
+networks:
+  my-network:
