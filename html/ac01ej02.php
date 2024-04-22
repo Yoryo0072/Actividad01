@@ -26,8 +26,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validar las credenciales ingresadas
     if (validar_credenciales($usuario_ingresado, $contrasena_ingresada)) {
         echo "¡Bienvenido, $usuario_ingresado!";
+        echo '<a href="/">Volver</a>';
+        exit; // Termina la ejecución después de mostrar el mensaje
     } else {
         echo "Usuario o contraseña incorrectos.";
+        echo '<a href="/">Volver</a>';
+        exit; // Termina la ejecución después de mostrar el mensaje
     }
 }
 ?>
@@ -42,14 +46,28 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <h2>Iniciar Sesión</h2>
-    <form method="post" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-        <label for="usuario">Usuario:</label><br>
-        <input type="text" id="usuario" name="usuario"><br><br>
-        <label for="contrasena">Contraseña:</label><br>
-        <input type="password" id="contrasena" name="contrasena"><br><br>
-        <input type="submit" value="Iniciar Sesión">
-    </form>
+    <?php
+    if (isset($_POST['usuario']) and isset($_POST['contrasena'])) {
+        $usuario = $_POST['usuario'];
+        $contrasena = $_POST['contrasena'];
+        validar_credenciales($usuario, $contrasena);
+    } else {
+        echo
+        '
+        <h2>Iniciar Sesión</h2>
+        <form method="post">
+            <label for="usuario">Usuario:</label><br>
+            <input type="text" id="usuario" name="usuario"><br><br>
+            <label for="contrasena">Contraseña:</label><br>
+            <input type="password" id="contrasena" name="contrasena"><br><br>
+            <input type="submit" value="Iniciar Sesión">
+            <br>
+            <a href="/">Volver</a>
+        </form>
+        ';
+    }
+    ?>
+    <a></a>
 </body>
 
 </html>

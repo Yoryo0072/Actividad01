@@ -73,8 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
         echo "</ul>";
 
-        echo '<a href="/">Retornar Formulario</a>';
-        echo '<a href="/">Retornar Formulario';
+        echo '<br><a href="/">Volver';
     } else {
         echo
         '
@@ -83,6 +82,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <label for="frase">Ingrese una frase:</label><br>
             <input type="text" id="frase" name="frase"><br><br>
             <button type="submit">Enviar</button>
+            <br><a href="/">Volver
         </form>
         ';
     }

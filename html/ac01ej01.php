@@ -16,7 +16,7 @@ function get_browser_name($user_agent)
 }
 
 // Función para mostrar el mensaje de bienvenida y el navegador
-function welcome_message()
+function mensaje()
 {
     // Obtener el agente de usuario del navegador
     $user_agent = $_SERVER['HTTP_USER_AGENT'];
@@ -40,8 +40,10 @@ function welcome_message()
 
 <body>
     <?php
-    welcome_message();
+    mensaje();
     ?>
+    <br>
+    <a href="/">Volver</a>
 </body>
 
 </html>

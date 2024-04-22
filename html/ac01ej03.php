@@ -38,7 +38,7 @@ function generar_NPrimos($cantidad)
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">12
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividad 3</title>
 </head>
 
@@ -49,7 +49,7 @@ function generar_NPrimos($cantidad)
         $num_primos = generar_NPrimos($cant);
         echo "Numeros primos aleatorios:<br>";
         echo implode(", <br>", $num_primos);
-        echo '<a href="/">Retornar Formulario';
+        echo '<br><a href="/">Volver';
     } else {
         echo
         '
@@ -62,6 +62,7 @@ function generar_NPrimos($cantidad)
         <div>
             <button type="submit">Enviar</button>
         </div>
+        <br><a href="/">Volver
         </form>
         ';
     }

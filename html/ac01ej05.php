@@ -36,6 +36,7 @@ function combinar_nombre_apellido($nombre, $apellidos)
         echo "<li>$nombre</li>";
     }
     echo "</ul>";
+    echo '<br><a href="/">Volver';
     ?>
 </body>
 
